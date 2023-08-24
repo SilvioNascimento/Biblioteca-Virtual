@@ -1,6 +1,6 @@
 package com.ufpb.biblioteca.controller;
 
-import com.ufpb.biblioteca.livro.Livro;
+import com.ufpb.biblioteca.entity.Livro;
 import com.ufpb.biblioteca.repository.LivroRepository;
 import com.ufpb.biblioteca.request.LivroRequestDTO;
 import jakarta.validation.Valid;
