@@ -3,6 +3,7 @@ package com.ufpb.biblioteca.controller;
 import com.ufpb.biblioteca.entity.Livro;
 import com.ufpb.biblioteca.repository.LivroRepository;
 import com.ufpb.biblioteca.request.LivroRequestDTO;
+import com.ufpb.biblioteca.request.LivroResponseDTO;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class LivroController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public ResponseEntity getAllBooks() {
-        var listaLivros = repository.findAll();
+        var listaLivros = repository.findAll().stream().map(LivroResponseDTO::new).toList();
         return ResponseEntity.ok(listaLivros); //Retorna todos os objetos do tipo Livro
     }
 
@@ -39,8 +40,8 @@ public class LivroController {
     // Mostra tudo sobre o livro especificado pelo titulo
     @GetMapping("/{titulo}")
     public ResponseEntity getBookInTitulo(@PathVariable String titulo) {
-        List<Livro> livroEncontrado = repository.findByTitulo(titulo);
-        if(!livroEncontrado.isEmpty()) {
+        var livroEncontrado = repository.findByTitulo(titulo).stream().map(LivroResponseDTO::new);
+        if(livroEncontrado != null) {
             return ResponseEntity.ok(livroEncontrado);
         } else {
             return ResponseEntity.notFound().build();
