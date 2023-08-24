@@ -1,5 +1,6 @@
-package com.ufpb.biblioteca.livro;
+package com.ufpb.biblioteca.repository;
 
+import com.ufpb.biblioteca.livro.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
