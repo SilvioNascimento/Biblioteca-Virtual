@@ -3,6 +3,7 @@ package com.ufpb.biblioteca.controller;
 import com.ufpb.biblioteca.entity.Livro;
 import com.ufpb.biblioteca.repository.LivroRepository;
 import com.ufpb.biblioteca.request.LivroRequestDTO;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -67,7 +68,7 @@ public class LivroController {
             livro.setCapaDoLivro(data.capa_do_livro());
             return ResponseEntity.ok(livro);
         } else {
-            return ResponseEntity.notFound().build();
+            throw new EntityNotFoundException();
         }
     }
 
@@ -79,7 +80,7 @@ public class LivroController {
             repository.deleteById(id);
             return ResponseEntity.noContent().build();
         } else {
-            return ResponseEntity.notFound().build();
+            throw new EntityNotFoundException();
         }
     }
 
