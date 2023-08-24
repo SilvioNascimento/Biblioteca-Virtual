@@ -1,7 +1,7 @@
 package com.ufpb.biblioteca.controller;
 
 import com.ufpb.biblioteca.livro.Livro;
-import com.ufpb.biblioteca.livro.LivroRepository;
+import com.ufpb.biblioteca.repository.LivroRepository;
 import com.ufpb.biblioteca.request.LivroRequestDTO;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class LivroController {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public ResponseEntity getAllBooks() {
-        var listaLivros = repository.findAll().stream();
+        var listaLivros = repository.findAll();
         return ResponseEntity.ok(listaLivros); //Retorna todos os objetos do tipo Livro
     }
 
