@@ -1,7 +1,7 @@
 package com.ufpb.biblioteca.livro.entity;
 
 
-import com.ufpb.biblioteca.livro.request.LivroRequestDTO;
+import com.ufpb.biblioteca.livro.DTO.LivroRequestDTO;
 import jakarta.persistence.*;
 
 import java.util.Objects;

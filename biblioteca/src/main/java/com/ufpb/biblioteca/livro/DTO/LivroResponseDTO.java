@@ -1,4 +1,4 @@
-package com.ufpb.biblioteca.livro.request;
+package com.ufpb.biblioteca.livro.DTO;
 
 import com.ufpb.biblioteca.livro.entity.Livro;
 

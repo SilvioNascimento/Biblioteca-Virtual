@@ -1,9 +1,7 @@
-package com.ufpb.biblioteca.livro.request;
+package com.ufpb.biblioteca.livro.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
-import java.util.UUID;
 
 public record LivroRequestDTO(String id,
                               @NotBlank
