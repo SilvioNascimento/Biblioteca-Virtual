@@ -1,9 +1,9 @@
-package com.ufpb.biblioteca.controller;
+package com.ufpb.biblioteca.livro.controller;
 
-import com.ufpb.biblioteca.entity.Livro;
-import com.ufpb.biblioteca.repository.LivroRepository;
-import com.ufpb.biblioteca.request.LivroRequestDTO;
-import com.ufpb.biblioteca.request.LivroResponseDTO;
+import com.ufpb.biblioteca.livro.entity.Livro;
+import com.ufpb.biblioteca.livro.repository.LivroRepository;
+import com.ufpb.biblioteca.livro.request.LivroRequestDTO;
+import com.ufpb.biblioteca.livro.request.LivroResponseDTO;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 

@@ -1,4 +1,4 @@
-package com.ufpb.biblioteca.exceptions;
+package com.ufpb.biblioteca.livro.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

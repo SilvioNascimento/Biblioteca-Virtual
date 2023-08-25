@@ -1,4 +1,4 @@
-package com.ufpb.biblioteca.request;
+package com.ufpb.biblioteca.livro.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
