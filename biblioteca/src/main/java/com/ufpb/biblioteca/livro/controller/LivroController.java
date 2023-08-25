@@ -21,7 +21,7 @@ public class LivroController {
     @Autowired
     private LivroRepository repository;
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public ResponseEntity getAllBooks() {
         var listaLivros = repository.findAll().stream().map(LivroResponseDTO::new).toList();
@@ -47,7 +47,7 @@ public class LivroController {
         }
     }
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     public ResponseEntity cadastrarLivro(@RequestBody @Valid LivroRequestDTO data) {
         Livro livroData = new Livro(data);
